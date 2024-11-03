@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxWeight = new System.Windows.Forms.ComboBox();
+            this.comboBoxAge = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxBack = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxHeartDisease = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBoxStamina = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBoxHeight = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBoxLifestyle = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboBoxTeamOrNot = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBoxGoal = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.comboBoxFlex = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.comboBoxKnee = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPuchkin = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.comboBoxExtreme = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.outputWindow = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -68,32 +69,34 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Лишний вес";
             // 
-            // comboBox1
+            // comboBoxWeight
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxWeight.FormattingEnabled = true;
+            this.comboBoxWeight.Items.AddRange(new object[] {
             "Нет",
             "Да"});
-            this.comboBox1.Location = new System.Drawing.Point(31, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxWeight.Location = new System.Drawing.Point(31, 61);
+            this.comboBoxWeight.Name = "comboBoxWeight";
+            this.comboBoxWeight.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxWeight.TabIndex = 2;
             // 
-            // comboBox2
+            // comboBoxAge
             // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            this.comboBoxAge.AutoCompleteCustomSource.AddRange(new string[] {
             "0-18",
             "19-40",
             "41-60",
             "61-100"});
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Нет",
-            "Да"});
-            this.comboBox2.Location = new System.Drawing.Point(31, 133);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.comboBoxAge.FormattingEnabled = true;
+            this.comboBoxAge.Items.AddRange(new object[] {
+            "0-18",
+            "19-40",
+            "41-60",
+            "61-100"});
+            this.comboBoxAge.Location = new System.Drawing.Point(31, 133);
+            this.comboBoxAge.Name = "comboBoxAge";
+            this.comboBoxAge.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAge.TabIndex = 4;
             // 
             // label2
             // 
@@ -104,16 +107,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Возраст";
             // 
-            // comboBox3
+            // comboBoxBack
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Есть",
-            "Нет"});
-            this.comboBox3.Location = new System.Drawing.Point(31, 206);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 6;
+            this.comboBoxBack.FormattingEnabled = true;
+            this.comboBoxBack.Items.AddRange(new object[] {
+            "Нет",
+            "Есть"});
+            this.comboBoxBack.Location = new System.Drawing.Point(31, 206);
+            this.comboBoxBack.Name = "comboBoxBack";
+            this.comboBoxBack.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBack.TabIndex = 6;
             // 
             // label3
             // 
@@ -124,16 +127,16 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Травмы спины";
             // 
-            // comboBox4
+            // comboBoxHeartDisease
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Есть",
-            "Нет"});
-            this.comboBox4.Location = new System.Drawing.Point(31, 278);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 8;
+            this.comboBoxHeartDisease.FormattingEnabled = true;
+            this.comboBoxHeartDisease.Items.AddRange(new object[] {
+            "Нет",
+            "Есть"});
+            this.comboBoxHeartDisease.Location = new System.Drawing.Point(31, 278);
+            this.comboBoxHeartDisease.Name = "comboBoxHeartDisease";
+            this.comboBoxHeartDisease.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxHeartDisease.TabIndex = 8;
             // 
             // label4
             // 
@@ -144,17 +147,17 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Сердечно-сосудистые заболевания";
             // 
-            // comboBox5
+            // comboBoxStamina
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.comboBoxStamina.FormattingEnabled = true;
+            this.comboBoxStamina.Items.AddRange(new object[] {
             "Низкий",
             "Средний",
             "Высокий"});
-            this.comboBox5.Location = new System.Drawing.Point(31, 356);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 10;
+            this.comboBoxStamina.Location = new System.Drawing.Point(31, 356);
+            this.comboBoxStamina.Name = "comboBoxStamina";
+            this.comboBoxStamina.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStamina.TabIndex = 10;
             // 
             // label5
             // 
@@ -165,17 +168,17 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Уровень выносливости";
             // 
-            // comboBox6
+            // comboBoxHeight
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.comboBoxHeight.FormattingEnabled = true;
+            this.comboBoxHeight.Items.AddRange(new object[] {
             "0-160",
             "161-180",
             "181-250"});
-            this.comboBox6.Location = new System.Drawing.Point(31, 428);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 12;
+            this.comboBoxHeight.Location = new System.Drawing.Point(31, 428);
+            this.comboBoxHeight.Name = "comboBoxHeight";
+            this.comboBoxHeight.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxHeight.TabIndex = 12;
             // 
             // label6
             // 
@@ -186,16 +189,16 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Рост";
             // 
-            // comboBox7
+            // comboBoxLifestyle
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.comboBoxLifestyle.FormattingEnabled = true;
+            this.comboBoxLifestyle.Items.AddRange(new object[] {
             "Подвижный",
             "Малоподвижный"});
-            this.comboBox7.Location = new System.Drawing.Point(31, 510);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 21);
-            this.comboBox7.TabIndex = 14;
+            this.comboBoxLifestyle.Location = new System.Drawing.Point(31, 510);
+            this.comboBoxLifestyle.Name = "comboBoxLifestyle";
+            this.comboBoxLifestyle.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLifestyle.TabIndex = 14;
             // 
             // label7
             // 
@@ -206,16 +209,16 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Образ жизни";
             // 
-            // comboBox8
+            // comboBoxTeamOrNot
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.comboBoxTeamOrNot.FormattingEnabled = true;
+            this.comboBoxTeamOrNot.Items.AddRange(new object[] {
             "Командный",
             "Индивидуальные занятия"});
-            this.comboBox8.Location = new System.Drawing.Point(31, 591);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 21);
-            this.comboBox8.TabIndex = 16;
+            this.comboBoxTeamOrNot.Location = new System.Drawing.Point(31, 591);
+            this.comboBoxTeamOrNot.Name = "comboBoxTeamOrNot";
+            this.comboBoxTeamOrNot.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTeamOrNot.TabIndex = 16;
             // 
             // label8
             // 
@@ -226,18 +229,18 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Командный/индивидуальный спорт";
             // 
-            // comboBox9
+            // comboBoxGoal
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
+            this.comboBoxGoal.FormattingEnabled = true;
+            this.comboBoxGoal.Items.AddRange(new object[] {
             "Похудение",
             "Набор мышечной массы",
             "Повышение выносливости",
             "Для здоровья"});
-            this.comboBox9.Location = new System.Drawing.Point(264, 61);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 21);
-            this.comboBox9.TabIndex = 18;
+            this.comboBoxGoal.Location = new System.Drawing.Point(264, 61);
+            this.comboBoxGoal.Name = "comboBoxGoal";
+            this.comboBoxGoal.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGoal.TabIndex = 18;
             // 
             // label9
             // 
@@ -248,17 +251,17 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Цель";
             // 
-            // comboBox10
+            // comboBoxFlex
             // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
+            this.comboBoxFlex.FormattingEnabled = true;
+            this.comboBoxFlex.Items.AddRange(new object[] {
             "Низкий",
             "Средний",
             "Высокий"});
-            this.comboBox10.Location = new System.Drawing.Point(261, 133);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 21);
-            this.comboBox10.TabIndex = 20;
+            this.comboBoxFlex.Location = new System.Drawing.Point(261, 133);
+            this.comboBoxFlex.Name = "comboBoxFlex";
+            this.comboBoxFlex.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxFlex.TabIndex = 20;
             // 
             // label10
             // 
@@ -269,16 +272,16 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Уровень гибкости";
             // 
-            // comboBox11
+            // comboBoxKnee
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Items.AddRange(new object[] {
-            "Есть",
-            "Нет"});
-            this.comboBox11.Location = new System.Drawing.Point(259, 207);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(121, 21);
-            this.comboBox11.TabIndex = 22;
+            this.comboBoxKnee.FormattingEnabled = true;
+            this.comboBoxKnee.Items.AddRange(new object[] {
+            "Нет",
+            "Есть"});
+            this.comboBoxKnee.Location = new System.Drawing.Point(259, 207);
+            this.comboBoxKnee.Name = "comboBoxKnee";
+            this.comboBoxKnee.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxKnee.TabIndex = 22;
             // 
             // label11
             // 
@@ -289,16 +292,16 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Травмы коленей";
             // 
-            // comboBox12
+            // comboBoxPuchkin
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
+            this.comboBoxPuchkin.FormattingEnabled = true;
+            this.comboBoxPuchkin.Items.AddRange(new object[] {
             "Вы Пучкин Максим Валентинович",
             "Вы не Пучкин Максим Валентинович"});
-            this.comboBox12.Location = new System.Drawing.Point(259, 278);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(121, 21);
-            this.comboBox12.TabIndex = 24;
+            this.comboBoxPuchkin.Location = new System.Drawing.Point(259, 278);
+            this.comboBoxPuchkin.Name = "comboBoxPuchkin";
+            this.comboBoxPuchkin.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPuchkin.TabIndex = 24;
             // 
             // label12
             // 
@@ -309,16 +312,16 @@
             this.label12.TabIndex = 23;
             this.label12.Text = "Тест на лучшего преподавателя";
             // 
-            // comboBox13
+            // comboBoxExtreme
             // 
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Items.AddRange(new object[] {
+            this.comboBoxExtreme.FormattingEnabled = true;
+            this.comboBoxExtreme.Items.AddRange(new object[] {
             "Есть",
             "Нет"});
-            this.comboBox13.Location = new System.Drawing.Point(259, 356);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(121, 21);
-            this.comboBox13.TabIndex = 26;
+            this.comboBoxExtreme.Location = new System.Drawing.Point(259, 356);
+            this.comboBoxExtreme.Name = "comboBoxExtreme";
+            this.comboBoxExtreme.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxExtreme.TabIndex = 26;
             // 
             // label13
             // 
@@ -338,6 +341,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Прямой вывод";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // outputWindow
             // 
@@ -359,39 +363,51 @@
             this.button2.Text = "Обратный вывод";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(822, 619);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(178, 47);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "Загрузка данных";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 688);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.outputWindow);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox13);
+            this.Controls.Add(this.comboBoxExtreme);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox12);
+            this.Controls.Add(this.comboBoxPuchkin);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox11);
+            this.Controls.Add(this.comboBoxKnee);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox10);
+            this.Controls.Add(this.comboBoxFlex);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox9);
+            this.Controls.Add(this.comboBoxGoal);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox8);
+            this.Controls.Add(this.comboBoxTeamOrNot);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox7);
+            this.Controls.Add(this.comboBoxLifestyle);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.comboBoxHeight);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.comboBoxStamina);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBoxHeartDisease);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBoxBack);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxAge);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxWeight);
             this.Controls.Add(this.label1);
             this.Name = "AIForm";
             this.Text = "Прямой вывод";
@@ -403,33 +419,34 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxWeight;
+        private System.Windows.Forms.ComboBox comboBoxAge;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxBack;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxHeartDisease;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBoxStamina;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBoxHeight;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBoxLifestyle;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBoxTeamOrNot;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBoxGoal;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox comboBoxFlex;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.ComboBox comboBoxKnee;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox comboBoxPuchkin;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox13;
+        private System.Windows.Forms.ComboBox comboBoxExtreme;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox outputWindow;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
