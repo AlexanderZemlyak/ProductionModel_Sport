@@ -27,6 +27,10 @@ namespace ProductionModel
 
         private const string goalMark = "S";
 
+        private Fact goalFact;
+
+        private List<Fact> goalFacts = new List<Fact>();
+
         public AIForm()
         {
             InitializeComponent();
@@ -49,6 +53,7 @@ namespace ProductionModel
             };
             
             ParseDatabase();
+
         }
 
         private void ParseDatabase()
@@ -174,6 +179,7 @@ namespace ProductionModel
                     }
                 }
             }
+            goalFacts = allFacts.Where(f => f.IsGoal).ToList();
         }
 
         private Fact[] GetInitialFacts()
@@ -215,8 +221,133 @@ namespace ProductionModel
             outputWindow.AppendText("\n" + "Полученные виды спорта: ");
 
             outputWindow.AppendText(string.Join(", ", currentFacts.Where(fact => fact.IsGoal)));
+
+            targetListBox1.Items.Add(string.Join(", ", currentFacts.Where(fact => fact.IsGoal)));
+
+            goalFacts.AddRange(currentFacts.Where(fact => fact.IsGoal));
+        }
+        void BackwardChaining(Fact targetGoal)
+        {
+            // Фиктивная вершина, объединяющая все целевые факты
+            Fact dummyGoal = new Fact("DummyGoal");
+            rules.Add(new Production(lhs: new List<Fact>{targetGoal}.ToArray(), rhs:(dummyGoal))); // Фиктивное правило 
+
+            // Стек для хранения фактов, которые необходимо проверить
+            Stack<Fact> stack = new Stack<Fact>();
+            Dictionary<Fact, Production> factToRule = new Dictionary<Fact, Production>(); // Связываем факты с правилами
+            HashSet<Fact> foundFacts = new HashSet<Fact>(allFacts); // Хранит все уже найденные факты
+
+            // Пушим фиктивную вершину в стек, чтобы начать процесс поиска
+            stack.Push(dummyGoal);
+
+            while (stack.Count > 0)
+            {
+                Fact currentFact = stack.Pop();
+
+                // Если факт уже найден, пропускаем его
+                //if (foundFacts.Contains(currentFact))
+                    //continue;
+
+                // Ищем все правила, ведущие к текущему факту
+                var applicableRules = rules.Where(r => r.RHS == currentFact).ToList();
+                if (applicableRules.Count == 0)
+                {
+                    outputWindow.AppendText($"Не удалось найти правила для факта: {currentFact.Description}");
+                    return;
+                }
+
+                bool factProven = false;
+
+                foreach (var rule in applicableRules)
+                {
+                    // Проверяем, найдены ли все левые части для текущего правила
+                    bool allCausesFound = rule.LHS.All(lhs => foundFacts.Contains(lhs));
+
+                    if (allCausesFound)
+                    {
+                        // Если все левые части найдены, добавляем текущий факт как доказанный
+                        foundFacts.Add(rule.RHS);
+                        factToRule[rule.RHS] = rule; // Сохраняем правило для обратного построения
+                        factProven = true;
+                        break;
+                    }
+                    else
+                    {
+                        // Если левые части не найдены, добавляем текущий факт и его левые части в стек
+                        stack.Push(currentFact);
+                        foreach (var lhs in rule.LHS)
+                        {
+                            if (!foundFacts.Contains(lhs))
+                                stack.Push(lhs);
+                        }
+                        break;
+                    }
+                }
+
+                if (!factProven)
+                {
+                    outputWindow.AppendText($"Не удалось доказать факт: {currentFact.Description}");
+                    return;
+                }
+            }
+
+            // Выводим результат, проходя от целевого факта к начальному
+            outputWindow.AppendText("Оптимальная последовательность для достижения цели:");
+            PrintSolution(dummyGoal, factToRule);
         }
 
+        // Вспомогательная функция для рекурсивного вывода цепочки правил и фактов
+        void PrintSolution(Fact fact, Dictionary<Fact, Production> factToRule)
+        {
+            if (allFacts.Contains(fact))
+            {
+                outputWindow.AppendText($"Начальный факт: {fact.Description}");
+                return;
+            }
+
+            if (factToRule.ContainsKey(fact))
+            {
+                var rule = factToRule[fact];
+                outputWindow.AppendText($"Для достижения {fact.Description} использовано правило:");
+                outputWindow.AppendText($"LHS: {string.Join(", ", rule.LHS.Select(f => f.Description))} => RHS: {rule.RHS.Description}");
+
+                foreach (var lhs in rule.LHS)
+                {
+                    PrintSolution(lhs, factToRule);
+                }
+            }
+            else
+            {
+                outputWindow.AppendText($"Факт {fact.Description} не может быть доказан.");
+            }
+        }
+
+
+        // Метод для запуска алгоритма на основе выбора пользователя
+        public void StartBackwardChaining()
+        {
+            // Выполняем прямой вывод, чтобы определить достижимые целевые факты
+            ForwardChaining();
+            //List<Fact> reachableGoals = goalFacts;
+
+            // Отображаем список достижимых целевых фактов для выбора
+            targetListBox1.Items.Clear();
+            foreach (var goal in goalFacts)
+            {
+                targetListBox1.Items.Add(goal.ToString());
+            }
+
+            var selectedGoal = goalFact;
+            if (selectedGoal == null)
+            {
+                outputWindow.AppendText("Целевой факт не выбран.\n");
+                return;
+            }
+
+            
+            outputWindow.AppendText("\nЗапуск обратного вывода для выбранного вида спорта: " + selectedGoal.Description + "\n");
+            BackwardChaining(selectedGoal);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             outputWindow.Clear();
@@ -227,6 +358,18 @@ namespace ProductionModel
         private void button3_Click(object sender, EventArgs e)
         {
             ParseDatabase();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            outputWindow.Clear();
+            //BackwardChaining(goalFact);
+            StartBackwardChaining();
+        }
+
+        private void targetListBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            goalFact = new Fact(description:targetListBox1.Items[targetListBox1.SelectedIndex].ToString(), isGoal: true);
         }
     }
 
@@ -246,6 +389,15 @@ namespace ProductionModel
         {
             return Description;
         }
+        public override bool Equals(object obj)
+        {
+            return obj is Fact fact && Description == fact.Description;
+        }
+
+        public override int GetHashCode()
+        {
+            return (Description != null ? Description.GetHashCode() : 0);
+        }
     }
 
     public class Production
@@ -263,6 +415,23 @@ namespace ProductionModel
         public override string ToString()
         {
             return string.Join(", ", LHS.Select(fact => fact.ToString())) + " -> " + RHS;
+        }
+    }
+
+    public class Snapshot
+    {
+        public HashSet<Fact> Facts { get; }
+        public Production AppliedRule { get; }
+
+        public Snapshot(HashSet<Fact> facts, Production appliedRule)
+        {
+            Facts = new HashSet<Fact>(facts);
+            AppliedRule = appliedRule;
+        }
+
+        public override string ToString()
+        {
+            return $"Facts: {string.Join(", ", Facts.Select(f => f.Description))}; Applied Rule: {AppliedRule}";
         }
     }
 }
