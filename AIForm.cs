@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProductionModel
 {
-    public partial class ForwardChainingForm : Form
+    public partial class AIForm : Form
     {
-        public ForwardChainingForm()
+        public AIForm()
         {
             InitializeComponent();
         }
