@@ -58,7 +58,6 @@
             this.outputWindow = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.targetListBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,7 +77,7 @@
             "Нет",
             "Да"});
             this.comboBoxWeight.Location = new System.Drawing.Point(41, 75);
-            this.comboBoxWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxWeight.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxWeight.Name = "comboBoxWeight";
             this.comboBoxWeight.Size = new System.Drawing.Size(160, 24);
             this.comboBoxWeight.TabIndex = 2;
@@ -97,7 +96,7 @@
             "41-60",
             "61-100"});
             this.comboBoxAge.Location = new System.Drawing.Point(41, 164);
-            this.comboBoxAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAge.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAge.Name = "comboBoxAge";
             this.comboBoxAge.Size = new System.Drawing.Size(160, 24);
             this.comboBoxAge.TabIndex = 4;
@@ -119,7 +118,7 @@
             "Нет",
             "Есть"});
             this.comboBoxBack.Location = new System.Drawing.Point(41, 254);
-            this.comboBoxBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxBack.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxBack.Name = "comboBoxBack";
             this.comboBoxBack.Size = new System.Drawing.Size(160, 24);
             this.comboBoxBack.TabIndex = 6;
@@ -141,7 +140,7 @@
             "Нет",
             "Есть"});
             this.comboBoxHeartDisease.Location = new System.Drawing.Point(41, 342);
-            this.comboBoxHeartDisease.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxHeartDisease.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxHeartDisease.Name = "comboBoxHeartDisease";
             this.comboBoxHeartDisease.Size = new System.Drawing.Size(160, 24);
             this.comboBoxHeartDisease.TabIndex = 8;
@@ -164,7 +163,7 @@
             "Средний",
             "Высокий"});
             this.comboBoxStamina.Location = new System.Drawing.Point(41, 438);
-            this.comboBoxStamina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxStamina.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxStamina.Name = "comboBoxStamina";
             this.comboBoxStamina.Size = new System.Drawing.Size(160, 24);
             this.comboBoxStamina.TabIndex = 10;
@@ -187,7 +186,7 @@
             "161-180",
             "181-250"});
             this.comboBoxHeight.Location = new System.Drawing.Point(41, 527);
-            this.comboBoxHeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxHeight.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxHeight.Name = "comboBoxHeight";
             this.comboBoxHeight.Size = new System.Drawing.Size(160, 24);
             this.comboBoxHeight.TabIndex = 12;
@@ -209,7 +208,7 @@
             "Подвижный",
             "Малоподвижный"});
             this.comboBoxLifestyle.Location = new System.Drawing.Point(41, 628);
-            this.comboBoxLifestyle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxLifestyle.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxLifestyle.Name = "comboBoxLifestyle";
             this.comboBoxLifestyle.Size = new System.Drawing.Size(160, 24);
             this.comboBoxLifestyle.TabIndex = 14;
@@ -231,7 +230,7 @@
             "Командный",
             "Индивидуальные занятия"});
             this.comboBoxTeamOrNot.Location = new System.Drawing.Point(41, 727);
-            this.comboBoxTeamOrNot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTeamOrNot.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxTeamOrNot.Name = "comboBoxTeamOrNot";
             this.comboBoxTeamOrNot.Size = new System.Drawing.Size(160, 24);
             this.comboBoxTeamOrNot.TabIndex = 16;
@@ -255,7 +254,7 @@
             "Повышение выносливости",
             "Для здоровья"});
             this.comboBoxGoal.Location = new System.Drawing.Point(352, 75);
-            this.comboBoxGoal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxGoal.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxGoal.Name = "comboBoxGoal";
             this.comboBoxGoal.Size = new System.Drawing.Size(160, 24);
             this.comboBoxGoal.TabIndex = 18;
@@ -278,7 +277,7 @@
             "Средний",
             "Высокий"});
             this.comboBoxFlex.Location = new System.Drawing.Point(348, 164);
-            this.comboBoxFlex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxFlex.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxFlex.Name = "comboBoxFlex";
             this.comboBoxFlex.Size = new System.Drawing.Size(160, 24);
             this.comboBoxFlex.TabIndex = 20;
@@ -300,7 +299,7 @@
             "Нет",
             "Есть"});
             this.comboBoxKnee.Location = new System.Drawing.Point(345, 255);
-            this.comboBoxKnee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxKnee.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxKnee.Name = "comboBoxKnee";
             this.comboBoxKnee.Size = new System.Drawing.Size(160, 24);
             this.comboBoxKnee.TabIndex = 22;
@@ -322,7 +321,7 @@
             "Вы Пучкин Максим Валентинович",
             "Вы не Пучкин Максим Валентинович"});
             this.comboBoxPuchkin.Location = new System.Drawing.Point(345, 342);
-            this.comboBoxPuchkin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxPuchkin.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPuchkin.Name = "comboBoxPuchkin";
             this.comboBoxPuchkin.Size = new System.Drawing.Size(160, 24);
             this.comboBoxPuchkin.TabIndex = 24;
@@ -344,7 +343,7 @@
             "Есть",
             "Нет"});
             this.comboBoxExtreme.Location = new System.Drawing.Point(345, 438);
-            this.comboBoxExtreme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxExtreme.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxExtreme.Name = "comboBoxExtreme";
             this.comboBoxExtreme.Size = new System.Drawing.Size(160, 24);
             this.comboBoxExtreme.TabIndex = 26;
@@ -363,7 +362,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(277, 762);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(340, 58);
             this.button1.TabIndex = 27;
@@ -374,7 +373,7 @@
             // outputWindow
             // 
             this.outputWindow.Location = new System.Drawing.Point(632, 32);
-            this.outputWindow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.outputWindow.Margin = new System.Windows.Forms.Padding(4);
             this.outputWindow.Name = "outputWindow";
             this.outputWindow.ReadOnly = true;
             this.outputWindow.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -386,7 +385,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(697, 762);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(340, 58);
             this.button2.TabIndex = 29;
@@ -398,7 +397,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(1096, 762);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(237, 58);
             this.button3.TabIndex = 30;
@@ -406,22 +405,11 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // targetListBox1
-            // 
-            this.targetListBox1.FormattingEnabled = true;
-            this.targetListBox1.ItemHeight = 16;
-            this.targetListBox1.Location = new System.Drawing.Point(298, 527);
-            this.targetListBox1.Name = "targetListBox1";
-            this.targetListBox1.Size = new System.Drawing.Size(266, 164);
-            this.targetListBox1.TabIndex = 32;
-            this.targetListBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.targetListBox1_MouseClick);
-            // 
             // AIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1379, 847);
-            this.Controls.Add(this.targetListBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.outputWindow);
@@ -452,7 +440,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxWeight);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AIForm";
             this.Text = "Прямой вывод";
             this.ResumeLayout(false);
@@ -492,6 +480,5 @@
         private System.Windows.Forms.RichTextBox outputWindow;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ListBox targetListBox1;
     }
 }
