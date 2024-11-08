@@ -253,13 +253,17 @@ namespace ProductionModel
             // Пушим фиктивную вершину в стек, чтобы начать процесс поиска
             stack.Push(dummyGoal);
 
+            // Отслеживаем посещенные факты для предотвращения циклов
+            HashSet<Fact> visited = new HashSet<Fact>();
             // Основной цикл поиска
             while (stack.Count > 0)
             {
                 Fact currentFact = stack.Pop();
-                
+                //if (visited.Contains(currentFact))
+                    //continue;
+                visited.Add(currentFact);
                 // Проверяем, есть ли альтернативные правила для текущего факта
-                if (!alternativeRules.ContainsKey(currentFact) && !foundFacts.Contains(currentFact))
+                if (!alternativeRules.ContainsKey(currentFact) && !initialFacts.Contains(currentFact))
                 {
                     // Если для currentFact нет правил, ищем альтернативные пути
                     while (stack.Count > 0 && (!alternativeRules.ContainsKey(stack.Peek()) || alternativeRules[stack.Peek()].Count == 0))
@@ -274,6 +278,7 @@ namespace ProductionModel
                     }
                     if (stack.Count == 0)
                     {
+
                         noSolution = true;
                         break;
                     }
@@ -358,12 +363,12 @@ namespace ProductionModel
                             stack.Push(currentFact);
                             foreach (var lhs in notFoundFacts)
                             {
-                                stack.Push(lhs);
+                                    stack.Push(lhs);
+                                }
                             }
                         }
                     }
                 }
-            }
 
             // Если решения нет, возвращаем пустой результат
             if (noSolution)
