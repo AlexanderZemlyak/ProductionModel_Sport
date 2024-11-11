@@ -11,7 +11,7 @@ namespace ProductionModel
     public partial class AIForm : Form
     {
 
-        private List<Fact> allFacts = new List<Fact>();
+        private Dictionary<string, Fact> allFacts = new Dictionary<string, Fact>();
 
         private Node[] allRealNodes;
 
@@ -58,7 +58,7 @@ namespace ProductionModel
 
         private void BuildTreeFromAllRules()
         {
-            allRealNodes = allFacts.Select(fact => new Node(NodeType.OR, false, fact, 0, null)).ToArray();
+            allRealNodes = allFacts.Select(p => new Node(NodeType.OR, false, p.Value, 0, null)).ToArray();
 
             dummy = new Node(NodeType.OR, true, null, 0, allRealNodes.Where(node => node.Fact.IsGoal).ToArray());
 
@@ -150,13 +150,13 @@ namespace ProductionModel
 
         private void ParseDatabase()
         {
-            allFacts = new List<Fact>();
+            allFacts = new Dictionary<string, Fact>();
 
             rules = new List<Production>();
 
             comboFacts = new Dictionary<ComboBox, Fact[]>();
 
-            using (var reader = new StreamReader(Path.Combine(Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory), @"..\..\", "database.txt")))
+            using (var reader = new StreamReader(Path.Combine(Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory), @"..\..\", "database_test.txt")))
             {
                 // начальные факты
                 string line = reader.ReadLine();
@@ -173,10 +173,10 @@ namespace ProductionModel
                         line = line.Substring(0, index + 1);
                     }
 
-                    Fact fact = new Fact(string.Join(" ", line.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries).Skip(1)), factIndex);
+                    Fact fact = new Fact(string.Join(" ", line.Split(new char[] { ' ', ',', ':' }, StringSplitOptions.RemoveEmptyEntries).Skip(1)), factIndex);
 
                     factsForCombobox.Add(fact);
-                    allFacts.Add(fact);
+                    allFacts[fact.Description] = fact;
 
                     factIndex++;
 
@@ -213,7 +213,7 @@ namespace ProductionModel
                         line = line.Substring(0, index + 1);
                     }
 
-                    var factStrings = line.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries).Skip(1);
+                    var factStrings = line.Split(new char[] { ' ', ',', ':' }, StringSplitOptions.RemoveEmptyEntries).Skip(1);
 
                     bool isGoal = false;
 
@@ -225,7 +225,7 @@ namespace ProductionModel
 
                     Fact fact = new Fact(string.Join(" ", factStrings), factIndex, isGoal);
 
-                    allFacts.Add(fact);
+                    allFacts[fact.Description] = fact;
 
                     factIndex++;
 
@@ -253,10 +253,10 @@ namespace ProductionModel
                         line = line.Substring(0, index);
                     }
 
-                    var indices = line.Split(new char[] { ' ', ',', '-', '>' }, StringSplitOptions.RemoveEmptyEntries)
-                                      .Skip(1)
-                                      .Select(stringIndex => int.Parse(stringIndex))
-                                      .ToArray();
+                    var indices = line.Split(new char[] { ' ', ',', '-', '>' }, StringSplitOptions.RemoveEmptyEntries);
+                                      // .Skip(1)
+                                      //.Select(stringIndex => int.Parse(stringIndex))
+                                      //.ToArray();
 
                     Production rule = new Production(lhs: indices.Take(indices.Length - 1)
                                                             .Select(_index => allFacts[_index])

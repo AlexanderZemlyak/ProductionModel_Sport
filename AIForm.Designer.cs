@@ -306,11 +306,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(237, 252);
+            this.label12.Location = new System.Drawing.Point(256, 252);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(170, 13);
+            this.label12.Size = new System.Drawing.Size(137, 13);
             this.label12.TabIndex = 23;
-            this.label12.Text = "Тест на лучшего преподавателя";
+            this.label12.Text = "Проверка преподавателя";
             // 
             // comboBoxExtreme
             // 
