@@ -445,6 +445,7 @@ namespace ProductionModel
 
             HashSet<Node> obtainedFacts = new HashSet<Node>();
 
+            // здесь неоптимально, потому что могут быть parents, которые заведут нас вникуда для каких-то initialNodes
             foreach (Node node in initialNodes)
             {
                 q.Enqueue(node);
@@ -459,7 +460,10 @@ namespace ProductionModel
                 {
                     foreach (Node parent in parents[node].OrderByDescending(x => x.Depth))
                     {
-                        if (parent == dummy || obtainedFacts.Contains(parent))
+                        if (parent == dummy)
+                            return;
+                            
+                        if (obtainedFacts.Contains(parent))
                             continue;
 
                         if (parent.Type == NodeType.OR)
@@ -501,6 +505,8 @@ namespace ProductionModel
                     }
                 }
             }
+
+
         }
 
         private bool MarkingSolvable(Node current, HashSet<Node> solvable, Dictionary<Node, List<Node>> parents)
