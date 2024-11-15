@@ -343,12 +343,13 @@ namespace ProductionModel
             Dictionary<Node, List<Node>> parents = new Dictionary<Node, List<Node>>();
 
             q.Enqueue(dummy);
+            closed.Add(dummy);
 
             while (q.Count != 0)
             {
                 Node current = q.Dequeue();
 
-                closed.Add(current);
+                // closed.Add(current);
 
                 if (current.Children != null)
                 {
@@ -363,7 +364,10 @@ namespace ProductionModel
 
                         // цикл
                         if (!closed.Contains(child))
+                        {
                             q.Enqueue(child);
+                            closed.Add(child);
+                        } 
 
                         // цикл
                         if (solvable.Contains(child))
